@@ -13,25 +13,6 @@ This simulation model recreates the full cataract pathway—from referral to dis
 
 The core of the project is a SimPy-based DES that models thousands of patients, each with their own HRG code, complexity, RTT target, provider behaviour, and bilateral surgery probability.
 
-## Repository Structure
-cataract-des-simulation
-│
-├── Parameter Generators/
-│   ├── Arrival_generator.py          # Daily arrival patterns, weekday effects, seasonality, autocorrelation
-│   ├── capacity_generator.py         # Theatre slot generation with weekday + seasonal behaviour
-│   ├── patient_generator.py          # Case-mix, HRGs, priority classes, bilateral behaviour
-│   ├── provider.py                   # Provider selection, loyalty patterns, NHS vs Independent split
-│   ├── rtt_generator.py              # Referral-to-treatment wait distribution generator
-│   └── service_time_generator.py     # Surgery duration, assessments, overhead and admin timings
-│
-├── Scenarios/
-│   ├── baseline.py                   # Baseline system simulation (current real-world pathway)
-│   ├── centralisedtriage.py          # Scenario with standardised referral + centralised triage
-│   └── des_simulation.ipynb          # Notebook for running any scenario with interactive exploration
-│
-├── patientlevelanalysis.ipynb        # Patient-level EDA on ICS datasets
-├── README.md                         # This file
-└── requirements.txt                  # Dependencies
 
 ## Core Concepts
 ### The Cataract Pathway Modelled
@@ -105,8 +86,8 @@ Simulates a system-wide triage process:
 
 - tests system-wide capacity pooling
 
-How to Run the Simulation
-Option 1: Notebook Interface
+## How to Run the Simulation
+### Option 1: Notebook Interface
 
 Open:
 
@@ -115,82 +96,82 @@ Scenarios/des_simulation.ipynb
 
 Then:
 
-Select scenario
+- Select scenario
 
-Run the model
+- Run the model
 
-View visualisations like wait distributions, utilisation curves, RTT compliance, and scenario comparisons
+- View visualisations like wait distributions, utilisation curves, RTT compliance, and scenario comparisons
 
-Option 2: Command Line
+### Option 2: Command Line
 
-Run individual scenarios:
+- Run individual scenarios:
 
-python Scenarios/baseline.py
-python Scenarios/centralisedtriage.py
+  - python Scenarios/baseline.py
+  - python Scenarios/centralisedtriage.py
 
 
-Each script prints:
+### Each script prints:
 
-mean + percentile wait times
+- mean + percentile wait times
 
-RTT compliance
+- RTT compliance
 
-utilisation metrics
+- utilisation metrics
 
-complexity mix
+- complexity mix
 
-provider distribution
+- provider distribution
 
-backlog evolution
+- backlog evolution
 
-Outputs & Metrics
+- Outputs & Metrics
 
-The simulation reports:
+### The simulation reports:
 
-Waiting-Time Metrics
+- Waiting-Time Metrics
 
-mean / median
+- mean / median
 
-P50 / P75 / P90 / P95 / P99
+- P50 / P75 / P90 / P95 / P99
 
-distribution plots
+- distribution plots
 
-RTT 18-week compliance
+- RTT 18-week compliance
 
-Capacity & Theatre Metrics
+- Capacity & Theatre Metrics
 
-daily theatre minutes used
+- daily theatre minutes used
 
-utilisation percentage
+- utilisation percentage
 
-case durations by HRG
+- case durations by HRG
 
-Provider-Level Dynamics
+- Provider-Level Dynamics
 
-volume share
+- volume share
 
-loyalty patterns
+- loyalty patterns
 
-independent-sector participation
+- independent-sector participation
 
-Scenario Comparisons
+- Scenario Comparisons
 
-reduction in backlog size
+- reduction in backlog size
 
-improvements in compliance
+- improvements in compliance
 
-change in theatre efficiency
+- change in theatre efficiency
 
-shifts in case complexity over time
+- shifts in case complexity over time
 
-Installation
+### Installation
 
 Install all dependencies:
 
 pip install -r requirements.txt
 
 
-Main packages:
+#### Main packages:
 
 SimPy
 
